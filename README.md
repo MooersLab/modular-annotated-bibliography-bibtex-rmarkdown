@@ -25,7 +25,7 @@ tinytex::install_tinytex()
 I have yet to test this.
 I used the full texlive distribution to develop this template.
 
-You can import LaTeX packages using the following in the YAML header of the Rmd file:
+You can install and import LaTeX packages using the following in the YAML header of the main Rmd file:
 
 ```yaml
 pdf_document:
@@ -44,7 +44,7 @@ The packages in [] are optional.
 - [glossary](https://debruine.github.io/glossary/) 
 
 
-## bash function for compiling and 
+## Bash function for compiling to PDF and automatically opening the PDF
 
 This function supports editing the R Markdown file outside of R Studio and then compiling it from the command line (e.g., `rmd myabib` to compile to PDF and have the PDF opended in the Preview.app).
 
@@ -65,11 +65,15 @@ Rscript -e "library('rmarkdown');library('acronymsdown');library('gloassary');rm
 
 ```
 
-
 ### Notes
 The compiling of the PDF is slow.
 This is tolerable if you only occasional need to 
 If you seek a more interactive experience, try the typst variant found [here](https://github.com/MooersLab/modular-annotated-bibliography-typst).
+
+## Python function for converting acronyms.tex to YAML format for acronsymdown
+
+## Python function for converting glossary.tex to YAML format for glossary
+
 
 ## Update history
 
