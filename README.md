@@ -7,6 +7,15 @@ In surgery![Version](https://img.shields.io/static/v1?label=matplotlib-voice-in&
 
 ## Status: Work in Progress
 
+## What is this?
+
+This template supports making single-paragraph annotations found in classical annotated bibliographies for undergrad homework.
+It also supports making multi-paragraph entries illustrated with figures, tables, equations, code listings, hyperlinks to videos online, and citations inside and outside the annotated bibliography.
+Yes, the annotated bibliography includes an inclusive Literature Cited section.
+These additional features make this modern approach to knowledge management more effective as a tool in science research and for self-study.
+
+## Why R Markdown?
+
 This template can be used in RStudio or an advanced text editor.
 Many people prefer to write in R Markdown.
 R Markdown is a [wrapper](https://everyday.codes/tutorials/how-to-use-latex-in-rmarkdown/) for LaTeX.
@@ -42,6 +51,13 @@ The packages in [] are optional.
 - rmarkdown
 - [acronymsdown](https://rchaput.github.io/acronymsdown/)
 - [glossary](https://debruine.github.io/glossary/) 
+
+## Addition requirements
+
+- a BibTeX file (no annote fields required)
+- a `~/bibNotes` folder for storing the annotations
+- a `~/glossaries` folder to store the list of acronyms and glossary files
+  
 
 
 ## Bash function for compiling to PDF and automatically opening the PDF
