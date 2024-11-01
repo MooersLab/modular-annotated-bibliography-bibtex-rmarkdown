@@ -70,7 +70,7 @@ The compiling of the PDF is slow.
 This is tolerable if you only occasional need to 
 If you seek a more interactive experience, try the typst variant found [here](https://github.com/MooersLab/modular-annotated-bibliography-typst).
 
-## Python function for converting acronyms.tex to YAML format for acronsymdown
+## Python function for converting acronyms.tex to YAML format for acronymsdown
 
 ## Python function for converting glossary.tex to YAML format for glossary
 
