@@ -69,6 +69,7 @@ Rscript -e "library('rmarkdown');library('acronymsdown');library('gloassary');rm
 The compiling of the PDF is slow.
 This is tolerable if you only occasional need to 
 If you seek a more interactive experience, try the typst variant found [here](https://github.com/MooersLab/modular-annotated-bibliography-typst).
+It has all of the same features except support for interactive computing in code blocks.
 
 ## Python function for converting acronyms.tex to YAML format for acronymsdown
 
