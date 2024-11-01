@@ -5,6 +5,7 @@ In surgery![Version](https://img.shields.io/static/v1?label=matplotlib-voice-in&
 
 # Template in R Markdown for generating a modular, illustrated, and annotated bibliography with BibTeX
 
+## Status: Work in Progress
 
 This template can be used in RStudio or an advanced text editor.
 Many people prefer to write in R Markdown.
