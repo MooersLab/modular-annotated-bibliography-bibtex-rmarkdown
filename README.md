@@ -13,7 +13,7 @@ This template supports making single-paragraph annotations found in classical an
 It also supports making multi-paragraph entries illustrated with figures, tables, equations, code listings, hyperlinks to videos online, and citations inside and outside the annotated bibliography.
 Yes, the annotated bibliography includes an inclusive Literature Cited section.
 These additional features make this modern approach to knowledge management more effective as a tool in science research and for self-study.
-We have to use a modular approach to the annotatons to be able to avoid the loss of whitespace between paragraphs and to enable textwrapping around embedded figures.
+We have to use a modular approach to the annotations to be able to avoid the loss of whitespace between paragraphs and to enable text wrapping around embedded figures.
 The modular approach also enables the reuse of annotations in the  bibliographies of related projects.
 
 The 21st Century bibliography has the following enhanced features that the classic annotated bibliography lacks:
@@ -65,7 +65,7 @@ The template has a code block to send the `-shell-escape` flag to the PDF compil
 
 ## You will need to install the following R packages: 
 
-The packages in [ ] are alternatives to the gloassaries package in LaTeX.
+The packages in [ ] are alternatives to the glossaries package in LaTeX.
 
 - rmarkdown
 - [acronymsdown](https://rchaput.github.io/acronymsdown/)
@@ -74,13 +74,13 @@ The packages in [ ] are alternatives to the gloassaries package in LaTeX.
 ## Additional requirements
 
 - a BibTeX file (annote fields are not used. )
-- a `~/bibNotes` folder for storing the annotations
-- a `~/bibNotes/images` folder for storing image files
-- a `~/glossaries` folder to store the list of acronyms and glossary files
+- a `~/bibNotes` folder for storing the annotations.
+- a `~/bibNotes/images` folder for storing image files used in the bibNotes.
+- a `~/glossaries` folder to store the list of acronyms and glossary files.
   
 ## Adding to the bibliography
 
-1. Provide path to your BibTeX file in aragument to `\bibliography{}`.
+1. Provide the path to your BibTeX file in the argument to `\bibliography{}.`
 2. Create a tex or Rmd file for each entry and store it in the bibNotes folder.
 3. Store associated image files in the images subfolder.
 4. Inject the bibliographic entry in a subsection heading by calling with its citekey in the argument for \bibentry{}. See below.
@@ -93,11 +93,11 @@ The packages in [ ] are alternatives to the gloassaries package in LaTeX.
 
 ## Bash function for compiling to PDF and automatically opening the PDF
 
-This function supports editing the R Markdown file outside of R Studio and then compiling it from the command line (e.g., `rmd myabib` to compile to PDF and have the PDF opended in the Preview.app).
+This function supports editing the R Markdown file outside of R Studio and then compiling it from the command line (e.g., `rmd main` to compile to PDF and open the PDF in the Preview.app).
 
 ```bash
 function rmd {
-echo "Compile Rmd (R Markdown) file with R, and open the resulting PDF with the Preview.app. (Mapped ot the alias 'pre')."
+echo "Compile Rmd (R Markdown) file with R, and open the resulting PDF with the Preview.app. (Mapped to the alias 'pre')."
 if [ $# -lt 1 ]; then
   echo 1>&2 "$0: not enough arguments"
   echo "Usage1: rmd <filename stem>"
@@ -109,26 +109,21 @@ elif [ $# -gt 1 ]; then
 fi
 Rscript -e "library('rmarkdown');library('acronymsdown');library('gloassary');rmarkdown::render('$1.Rmd')" && pre $1.pdf
 }
-
 ```
 
 ### Notes
-The compiling of the PDF is slow.
-This is tolerable if you only occasional need to compile the master file to make a PDF.
+The compiling of the PDF could be faster.
+It is tolerable if you only occasionally need to compile the master file to make a PDF.
 If you seek a more interactive experience, try the typst variant found [here](https://github.com/MooersLab/modular-annotated-bibliography-typst).
 Typst may be easier for beginners to learn.
-It has all of the same features except support for interactive computing in code blocks in RStudio.
-
-## Python function for converting acronyms.tex to YAML format for acronymsdown
-
-## Python function for converting glossary.tex to YAML format for glossary
-
+The template for Typst has all of the same features except for support for lists of Math Notations and for interactive computing in code blocks in RStudio.
+A nice introduction to Typst in October 2024 by Dr. Chase Brown of the University of Central Florida is found [here](https://mediasite.ouhsc.edu/Mediasite/Channel/python/browse/null/most-recent/null/0/null).
 
 ## Update history
 
-|Version      | Changes                                                                                                                                                    | Date                |
+|Version      | Changes                                                                                                                                   | Date                |
 |:------------|:------------------------------------------------------------------------------------------------------------------------------------------|:--------------------|
-| Version 0.1 |   Added badges, funding, and update table. Initial commit.                                                                    | 2024 November 1     |
+| Version 0.1 |   Added badges, funding, and update table. Initial commit.                                                                                | 2024 November 1     |
 
 ## Sources of funding
 
