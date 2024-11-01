@@ -3,7 +3,7 @@ In surgery![Version](https://img.shields.io/static/v1?label=matplotlib-voice-in&
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 
-# Template in R Markdown for generating a modular, illustrated, and annotated bibliography with BibTeX
+# Template in R Markdown for generating a modular, illustrated, and annotated bibliography for the 21st Century with BibTeX
 
 ## Status: Work in Progress
 
