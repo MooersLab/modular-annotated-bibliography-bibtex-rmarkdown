@@ -14,6 +14,24 @@ It also supports making multi-paragraph entries illustrated with figures, tables
 Yes, the annotated bibliography includes an inclusive Literature Cited section.
 These additional features make this modern approach to knowledge management more effective as a tool in science research and for self-study.
 
+The modular approach enables the reuse of annotations in the modular annotated bibliographies of related projects.
+It has the following enhanced features that the classic annotated bibliography lacks:
+
+- No longer restrained by the `annote` field in the BibTeX entry.
+- Modular annotation for easy reuse in related projects.
+- Images
+- Tables
+- Equations
+- Code blocks
+- Hyperlinks: internal and external
+- Bibliographic entries can be reordered for subgrouping by category. 
+- Table of contents, hyperlinked to sections
+- Index of terms
+- Bibliography includes papers cited outside of those listed in the annotated bibliography.
+- List of acronyms used
+- List of glossary terms used
+- [List of mathematical notation] WIP
+  
 ## Why R Markdown?
 
 This template can be used in RStudio or an advanced text editor.
