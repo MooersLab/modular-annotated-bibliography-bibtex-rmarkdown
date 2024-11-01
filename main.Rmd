@@ -1,0 +1,88 @@
+---
+title: "Document with Glossaries"
+author: "Blaine Mooers"
+output:
+  pdf_document:
+    extra_dependencies: ['amsmath', 'minted']
+header-includes:
+  - \usepackage{helvet}
+  - \usepackage{datetime2}
+  - \setlength{\parindent}{0pt} % make block paragraphs
+  - \usepackage{lastpage}
+  - \usepackage{wrapfig}
+  - \usepackage{booktabs}
+  - \usepackage{fancyhdr}
+  - \pagestyle{fancy}
+  - \fancyhf{} % Clear all header and footer fields
+  - \fancyhead[L]{\today}
+  - \fancyhead[C]{MAB for Project 0000} % Center header
+  - \fancyhead[R]{\thepage\ / \pageref{LastPage}}
+  - \usepackage{parskip} % add a blank line between paragraphs upon export to PDF.
+  - \usepackage{index}
+  - \makeindex
+  - \bibliographystyle{cell}
+  - \renewcommand{\refname}{Literature Cited}
+  - \usepackage{bibentry}
+  - \nobibliography*
+  - \usepackage[acronym]{glossaries}
+  - \usepackage[automake]{glossaries-extra}
+  - \newglossary[nlg]{notation}{not}{ntn}{Notation}
+  - \makeglossaries # must occur before input of the glossaries
+  - \loadglsentries{/Users/blaine/glossaries/acronyms}
+  - \loadglsentries{/Users/blaine/glossaries/glossary}
+  - \loadglsentries{/Users/blaine/glossaries/notation}
+  - \newglossaryentry{latex}{ name=LaTeX, description={A document preparation system} }
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, include=FALSE}
+options(tinytex.engine_args = '-shell-escape')
+```
+
+\tableofcontents
+
+## Introduction
+
+This document demonstrates how to use the glossaries package in R Markdown.
+
+## Glossary Entries
+The term \gls{latex} is commonly used in academic writing \index{LaTeX}.
+
+I enjoy \gls{bda} because \gls{bda} parallels the scientific process \index{BDA}.
+\gls{bda} can be extended in application with \acrshort{advi}.
+\gls{bda} can be used on \gls{aws}.
+
+\section*{Illustrated and annotated bibliography}
+\addcontentsline{toc}{section}{Illustrated and annotated bibliography}
+
+\subsection*{\bibentry{Mooers2020ShortcutsForFasterImageCreationInPyMOL}}
+\addcontentsline{toc}{subsection}{Mooers2020ShortcutsForFasterImageCreationInPyMOL}
+\input{/Users/blaine/bibNotes/Mooers2020ShortcutsForFasterImageCreationInPyMOL.Rmd}
+
+
+\subsection*{\bibentry{Mooers2021TemplatesForWritingPyMOLScripts}}
+\addcontentsline{toc}{subsection}{Mooers2021TemplatesForWritingPyMOLScripts}
+\input{/Users/blaine/bibNotes/Mooers2021TemplatesForWritingPyMOLScripts.Rmd}
+
+\clearpage
+\printglossary[type=\acronymtype,title=Acronyms]
+\addcontentsline{toc}{section}{Acronyms}
+
+\printglossary[title=Glossary] 
+\addcontentsline{toc}{section}{Glossary}
+
+\clearpage
+\addcontentsline{toc}{section}{Mathematical Notation}
+\glsaddall[types={notation}] % add all entries, not just those used.
+\printglossary[type=notation, title=Mathematical Notation]
+
+\addcontentsline{toc}{section}{Literature Cited}
+\bibliography{/Users/blaine/Documents/global}
+
+\addcontentsline{toc}{section}{Index}
+\printindex
+
