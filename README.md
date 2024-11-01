@@ -1,5 +1,5 @@
 # modular-annotated-bibliography-bibtex-rmarkdown
-In surgery![Version](https://img.shields.io/static/v1?label=modular-annotated-bibliography-bibtex-rmarkdown&message=0.1&color=brightcolor)
+![Version](https://img.shields.io/static/v1?label=modular-annotated-bibliography-bibtex-rmarkdown&message=0.1&color=brightcolor)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 
