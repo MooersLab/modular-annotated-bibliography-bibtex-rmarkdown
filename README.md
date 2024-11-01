@@ -74,14 +74,14 @@ The packages in [ ] are alternatives to the glossaries package in LaTeX.
 ## Additional requirements
 
 - a BibTeX file (annote fields are not used. )
-- a `~/bibNotes` folder for storing the annotations.
+- a `~/bibNotes` folder for storing the annotations. See example above.
 - a `~/bibNotes/images` folder for storing image files used in the bibNotes.
 - a `~/glossaries` folder to store the list of acronyms and glossary files.
   
 ## Adding to the bibliography
 
 1. Provide the path to your BibTeX file in the argument to `\bibliography{}.`
-2. Create a tex or Rmd file for each entry and store it in the bibNotes folder.
+2. Create a <citekey>.tex or <citekey>.Rmd file for each entry and store it in the bibNotes folder. No enabling code on the top line of these files is required.
 3. Store associated image files in the images subfolder.
 4. Inject the bibliographic entry in a subsection heading by calling with its citekey in the argument for \bibentry{}. See below.
    
@@ -93,7 +93,8 @@ The packages in [ ] are alternatives to the glossaries package in LaTeX.
 
 ## Bash function for compiling to PDF and automatically opening the PDF
 
-This function supports editing the R Markdown file outside of R Studio and then compiling it from the command line (e.g., `rmd main` to compile to PDF and open the PDF in the Preview.app).
+This function supports editing the R Markdown file outside of R Studio and compiling it from the command line (e.g., `rmd main` to compile to PDF and open the PDF in the Preview.app).
+Paste the code below into `.bashrc` or `.zshrc` and source this file (e.g., source .zshrc).
 
 ```bash
 function rmd {
@@ -123,7 +124,7 @@ A nice introduction to Typst in October 2024 by Dr. Chase Brown of the Universit
 
 |Version      | Changes                                                                                                                                   | Date                |
 |:------------|:------------------------------------------------------------------------------------------------------------------------------------------|:--------------------|
-| Version 0.1 |   Added badges, funding, and update table. Initial commit.                                                                                | 2024 November 1     |
+| Version 0.1 |   Added badges, funding, and update table. Initial commit of working version.                                                             | 2024 November 1     |
 
 ## Sources of funding
 
