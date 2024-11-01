@@ -27,7 +27,7 @@ I used the full texlive distribution to develop this template.
 
 You can import LaTeX packages using the following in the YAML header of the Rmd file:
 
-``` yaml
+```yaml
 pdf_document:
   extra_dependencies: ['amsmath', 'minted']
 ```
@@ -69,13 +69,13 @@ Rscript -e "library('rmarkdown');library('acronymsdown');library('gloassary');rm
 ### Notes
 The compiling of the PDF is slow.
 This is tolerable if you only occasional need to 
-If you seek a more interactive experience, try the typst variant found [here]()
+If you seek a more interactive experience, try the typst variant found [here](https://github.com/MooersLab/modular-annotated-bibliography-typst).
 
 ## Update history
 
-|Version      | Changes                                                                                                                                  | Date                 |
-|:-----------|:------------------------------------------------------------------------------------------------------------------------------------------|:--------------------|
-| Version 0.1 |   Added badges, funding, and update table.  Initial commit.                                                                              | 2024 October 26  |
+|Version      | Changes                                                                                                                                   | Date                |
+|:------------|:------------------------------------------------------------------------------------------------------------------------------------------|:--------------------|
+| Version 0.1 |   Added badges, funding, and update table.  Initial commit.                                                                               | 2024 November 1     |
 
 ## Sources of funding
 
