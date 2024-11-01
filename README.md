@@ -5,7 +5,7 @@
 
 # Template in R Markdown for generating a modular, illustrated, and annotated bibliography for the 21st Century with BibTeX
 
-## Status: Work in Progress
+## Status: works
 
 ## What is this?
 
@@ -13,9 +13,10 @@ This template supports making single-paragraph annotations found in classical an
 It also supports making multi-paragraph entries illustrated with figures, tables, equations, code listings, hyperlinks to videos online, and citations inside and outside the annotated bibliography.
 Yes, the annotated bibliography includes an inclusive Literature Cited section.
 These additional features make this modern approach to knowledge management more effective as a tool in science research and for self-study.
+We have to use a modular approach to the annotatons to be able to avoid the loss of whitespace between paragraphs and to enable textwrapping around embedded figures.
+The modular approach also enables the reuse of annotations in the  bibliographies of related projects.
 
-The modular approach enables the reuse of annotations in the modular annotated bibliographies of related projects.
-It has the following enhanced features that the classic annotated bibliography lacks:
+The 21st Century bibliography has the following enhanced features that the classic annotated bibliography lacks:
 
 - No longer restrained by the `annote` field in the BibTeX entry.
 - Modular annotation for easy reuse in related projects.
@@ -30,7 +31,7 @@ It has the following enhanced features that the classic annotated bibliography l
 - Bibliography includes papers cited outside of those listed in the annotated bibliography.
 - List of acronyms used
 - List of glossary terms used
-- [List of mathematical notation] WIP
+- List of mathematical notation
   
 ## Why R Markdown?
 
@@ -44,13 +45,13 @@ R Markdown is a [wrapper](https://everyday.codes/tutorials/how-to-use-latex-in-r
 You need a recent version of R.
 R Studio is optional.
 
-You can install R's slimmed-down version of texlive.
+You can use your current install of LaTeX (e.g., texlive).
+If you lack one, you can install via R a slimmed-down version of texlive called tinytex.
+It will fetch and install packages as you need them.
 
 ```R
 tinytex::install_tinytex()
 ```
-I have yet to test this.
-I used the full texlive distribution to develop this template.
 
 You can install and import LaTeX packages using the following in the YAML header of the main Rmd file:
 
@@ -59,12 +60,12 @@ pdf_document:
   extra_dependencies: ['amsmath', 'minted']
 ```
 
-The template has a code block to send the shell escape flag to the PDF compiler to enable the use of the minted package for syntax highlighting of code blocks.
+The template has a code block to send the `-shell-escape` flag to the PDF compiler to enable the use of the minted package for syntax highlighting of code blocks.
 
 
 ## You will need to install the following R packages: 
 
-The packages in [] are optional.
+The packages in [ ] are alternatives to the gloassaries package in LaTeX.
 
 - rmarkdown
 - [acronymsdown](https://rchaput.github.io/acronymsdown/)
@@ -72,17 +73,23 @@ The packages in [] are optional.
 
 ## Additional requirements
 
-- a BibTeX file (no annote fields required)
+- a BibTeX file (annote fields are not used. )
 - a `~/bibNotes` folder for storing the annotations
 - a `~/bibNotes/images` folder for storing image files
 - a `~/glossaries` folder to store the list of acronyms and glossary files
   
 ## Adding to the bibliography
 
-1. Create a tex or Rmd file for each entry and store it in the bibNotes folder.
-2. Store associated image files in the images subfolder.
-3. Inject the bibliographic entry in a heading by calling with its citekey in the argument for \bibentry{}. See below.
+1. Provide path to your BibTeX file in aragument to `\bibliography{}`.
+2. Create a tex or Rmd file for each entry and store it in the bibNotes folder.
+3. Store associated image files in the images subfolder.
+4. Inject the bibliographic entry in a subsection heading by calling with its citekey in the argument for \bibentry{}. See below.
    
+```latex
+\subsection*{\bibentry{Mooers2021TemplatesForWritingPyMOLScripts}}
+\addcontentsline{toc}{subsection}{Mooers2021TemplatesForWritingPyMOLScripts}
+\input{/Users/blaine/bibNotes/Mooers2021TemplatesForWritingPyMOLScripts.Rmd}
+```
 
 ## Bash function for compiling to PDF and automatically opening the PDF
 
@@ -107,9 +114,10 @@ Rscript -e "library('rmarkdown');library('acronymsdown');library('gloassary');rm
 
 ### Notes
 The compiling of the PDF is slow.
-This is tolerable if you only occasional need to 
+This is tolerable if you only occasional need to compile the master file to make a PDF.
 If you seek a more interactive experience, try the typst variant found [here](https://github.com/MooersLab/modular-annotated-bibliography-typst).
-It has all of the same features except support for interactive computing in code blocks.
+Typst may be easier for beginners to learn.
+It has all of the same features except support for interactive computing in code blocks in RStudio.
 
 ## Python function for converting acronyms.tex to YAML format for acronymsdown
 
@@ -118,9 +126,9 @@ It has all of the same features except support for interactive computing in code
 
 ## Update history
 
-|Version      | Changes                                                                                                                                   | Date                |
+|Version      | Changes                                                                                                                                                    | Date                |
 |:------------|:------------------------------------------------------------------------------------------------------------------------------------------|:--------------------|
-| Version 0.1 |   Added badges, funding, and update table.  Initial commit.                                                                               | 2024 November 1     |
+| Version 0.1 |   Added badges, funding, and update table. Initial commit.                                                                    | 2024 November 1     |
 
 ## Sources of funding
 
