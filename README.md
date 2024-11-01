@@ -8,7 +8,7 @@ In surgery![Version](https://img.shields.io/static/v1?label=matplotlib-voice-in&
 
 This template can be used in RStudio or an advanced text editor.
 Many people prefer to write in R Markdown.
-R Markdown is a wrapper for LaTeX.
+R Markdown is a [wrapper](https://everyday.codes/tutorials/how-to-use-latex-in-rmarkdown/) for LaTeX.
 
 
 ## System requirements
@@ -39,19 +39,42 @@ The template has a code block to send the shell escape flag to the PDF compiler 
 The packages in [] are optional.
 
 - rmarkdown
-- [acronymsdown]()
+- [acronymsdown](https://rchaput.github.io/acronymsdown/)
 - [glossary](https://debruine.github.io/glossary/) 
 
 
 ## bash function for compiling and 
 
+This function supports editing the R Markdown file outside of R Studio and then compiling it from the command line (e.g., `rmd myabib` to compile to PDF and have the PDF opended in the Preview.app).
 
+```bash
+function rmd {
+echo "Compile Rmd (R Markdown) file with R, and open the resulting PDF with the Preview.app. (Mapped ot the alias 'pre')."
+if [ $# -lt 1 ]; then
+  echo 1>&2 "$0: not enough arguments"
+  echo "Usage1: rmd <filename stem>"
+  return 2
+elif [ $# -gt 1 ]; then
+  echo 1>&2 "$0: too many arguments"
+  echo "Usage1: rmd  <filename stem>"
+  return 2
+fi
+Rscript -e "library('rmarkdown');library('acronymsdown');library('gloassary');rmarkdown::render('$1.Rmd')" && pre $1.pdf
+}
+
+```
+
+
+### Notes
+The compiling of the PDF is slow.
+This is tolerable if you only occasional need to 
+If you seek a more interactive experience, try the typst variant found [here]()
 
 ## Update history
 
 |Version      | Changes                                                                                                                                  | Date                 |
 |:-----------|:------------------------------------------------------------------------------------------------------------------------------------------|:--------------------|
-| Version 0.1 |   Added badges, funding, and update table.  Initial commit.                                                                                                                | 2024 October 26  |
+| Version 0.1 |   Added badges, funding, and update table.  Initial commit.                                                                              | 2024 October 26  |
 
 ## Sources of funding
 
