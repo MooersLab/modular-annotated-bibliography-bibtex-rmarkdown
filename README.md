@@ -52,13 +52,19 @@ The packages in [] are optional.
 - [acronymsdown](https://rchaput.github.io/acronymsdown/)
 - [glossary](https://debruine.github.io/glossary/) 
 
-## Addition requirements
+## Additional requirements
 
 - a BibTeX file (no annote fields required)
 - a `~/bibNotes` folder for storing the annotations
+- a `~/bibNotes/images` folder for storing image files
 - a `~/glossaries` folder to store the list of acronyms and glossary files
   
+## Adding to the bibliography
 
+1. Create a tex or Rmd file for each entry and store it in the bibNotes folder.
+2. Store associated image files in the images subfolder.
+3. Inject the bibliographic entry in a heading by calling with its citekey in the argument for \bibentry{}. See below.
+   
 
 ## Bash function for compiling to PDF and automatically opening the PDF
 
