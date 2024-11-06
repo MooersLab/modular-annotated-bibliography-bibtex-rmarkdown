@@ -40,7 +40,7 @@ Their use of PyMOL is generally limited to viewing and comparing structures.
 Beginner users are not yet willing to invest in learning the commands of the PyMOL macro language. 
 They prefer the intuitive nature of the PyMOL GUI and its pulldown menus. 
 
-\begin{table}[h]
+\begin{table}[ht]
 \begin{center}
 \caption{Tools by target skill level.}
 \begin{tabular}{l c c c c}
